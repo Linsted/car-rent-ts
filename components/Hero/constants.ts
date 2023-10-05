@@ -3,3 +3,5 @@ export const HERO_TITLES = Object.freeze({
   SUB: "Streamline your car rental experience with our effortless booking process.",
   BUTTON: "Explore Cars",
 });
+
+export const HERO_IMAGE_ALT = "hero";
