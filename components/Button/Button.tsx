@@ -1,13 +1,26 @@
-import Image from 'next/image';
-import React from 'react';
+"use client";
 
+import Image from "next/image";
+import React from "react";
 
-export default function Button() {
-    return (
-        <button
-            disabled={false}
-        >
+import { ButtonProps } from "@/types";
 
-        </button>
-    )
+import { BUTTONS_TYPES } from "./constants";
+
+export default function Button({
+  title,
+  containerStyles,
+  handleClick,
+  type = BUTTONS_TYPES.BUTTON,
+}: ButtonProps) {
+  return (
+    <button
+      disabled={false}
+      type={type}
+      className={`custom-btn ${containerStyles}`}
+      onClick={handleClick}
+    >
+      <span className={`flex-1`}>{title}</span>
+    </button>
+  );
 }
