@@ -6,3 +6,8 @@ export interface ButtonProps {
   handleClick?: MouseEventHandler<HTMLButtonElement>;
   type?: "button" | "submit" | "reset";
 }
+
+export interface LogoImageProps {
+  width?: number;
+  height?: number;
+}
