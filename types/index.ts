@@ -16,3 +16,13 @@ export interface HelpLinksProps {
   privacyText: string;
   termsText: string;
 }
+
+interface Link {
+  title: string;
+  url: string;
+}
+
+export interface FooterSection {
+  title: string;
+  links: Link[];
+}
