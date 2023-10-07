@@ -1,5 +1,3 @@
-export const LOGO_ALT = "Car Hub Logo";
-
 export const LOGO_DIMENSIONS = Object.freeze({
   WIDTH: 118,
   HEIGHT: 18,

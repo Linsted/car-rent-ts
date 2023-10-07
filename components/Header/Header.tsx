@@ -1,9 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+
+import { LOGO_ALT, PATHS } from "@/helpers/global/constants/constants";
+
 import Button from "../Button/Button";
-import { PATHS } from "@/helpers/global/constants/constants";
-import { BUTTON_TEXT, LOGO_ALT, LOGO_DIMENSIONS } from "./constants";
+
+import { BUTTON_TEXT, LOGO_DIMENSIONS } from "./constants";
 
 export default function Header() {
   return (
