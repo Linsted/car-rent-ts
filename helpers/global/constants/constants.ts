@@ -5,3 +5,6 @@ export const PATHS = Object.freeze({
 });
 
 export const LOGO_ALT = "Car Hub Logo";
+
+const date = new Date();
+export const currentYear = date.getFullYear();
