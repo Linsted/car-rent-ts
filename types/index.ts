@@ -11,3 +11,8 @@ export interface LogoImageProps {
   width?: number;
   height?: number;
 }
+
+export interface HelpLinksProps {
+  privacyText: string;
+  termsText: string;
+}

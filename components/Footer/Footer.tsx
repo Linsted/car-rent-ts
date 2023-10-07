@@ -3,7 +3,7 @@ import React from "react";
 import { currentYear } from "@/helpers/global/constants/constants";
 
 import HelpLinks from "../UiKit/HelpLinks/HelpLinks";
-import { WEBSITE_NAME } from "../UiKit/HelpLinks/constants";
+import { HELP_LINKS_TEXT, WEBSITE_NAME } from "../UiKit/HelpLinks/constants";
 import LogoImage from "../UiKit/LogoImage/LogoImage";
 import { FOOTER_LOGO_DIMENSIONS } from "./constants";
 
@@ -23,7 +23,10 @@ export default function Footer() {
         </div>
       </div>
 
-      <HelpLinks />
+      <HelpLinks
+        privacyText={HELP_LINKS_TEXT.PRIVACY}
+        termsText={HELP_LINKS_TEXT.TERMS}
+      />
     </footer>
   );
 }
