@@ -1,5 +1,8 @@
 import React from "react";
 
+import SearchBar from "../SearchBar/SearchBar";
+import CustomFilter from "../CustomFilter/CustomFilter";
+
 export default function Catalogue() {
   return (
     <div className="mt-12 padding-x padding-y max-width  " id="discover">
