@@ -1,7 +1,7 @@
 import { manufacturers } from "@/helpers/global/data/data";
 import React, { useState } from "react";
 
-export default function useSearchManufacturer(manufacturer: string) {
+export default function useSearchManufacturer() {
   const [query, setQuery] = useState("");
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) =>

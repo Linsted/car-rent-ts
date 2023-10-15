@@ -13,7 +13,7 @@ export default function SearchManufacturer({
   setManufacturer,
 }: SearchManufacturerProps) {
   const { filteredManufactures, handleChange, query, setQuery } =
-    useSearchManufacturer(manufacturer);
+    useSearchManufacturer();
 
   return (
     <div className="search-manufacturer">
