@@ -2,6 +2,7 @@ export const PATHS = Object.freeze({
   HERO_IMAGE: "/hero.png",
   LOGO_IMAGE: "/logo.svg",
   HOME: "/",
+  CAR_LOGO: "/car-logo.svg",
 });
 
 export const LOGO_ALT = "Car Hub Logo";

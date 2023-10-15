@@ -26,3 +26,14 @@ export interface FooterSection {
   title: string;
   links: Link[];
 }
+
+export interface SearchManufacturerProps {
+  manufacturer: string;
+  setManufacturer: (manufacturer: string) => void;
+}
+
+export interface FilteredManufacturesListProps {
+  filteredManufactures: string[];
+  query: string;
+  setQuery: (query: string) => void;
+}
