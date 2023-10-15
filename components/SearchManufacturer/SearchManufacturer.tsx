@@ -5,27 +5,15 @@ import Image from "next/image";
 import { SearchManufacturerProps } from "@/types";
 import { PATHS } from "@/helpers/global/constants/constants";
 import { CAR_LOGO, CAR_LOGO_DIMENSIONS, INPUT_PLACEHOLDER } from "./constants";
-import { manufacturers } from "@/helpers/global/data/data";
 import FilteredManufacturesList from "../FilteredManufacturesList/FilteredManufacturesList";
+import useSearchManufacturer from "./useSearchManufacturer";
 
 export default function SearchManufacturer({
   manufacturer,
   setManufacturer,
 }: SearchManufacturerProps) {
-  const [query, setQuery] = useState("");
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) =>
-    setQuery(event.target.value);
-
-  const filteredManufactures =
-    query === ""
-      ? manufacturers
-      : manufacturers.filter((manufacturer) =>
-          manufacturer
-            .toLowerCase()
-            .replace(/\s+/g, "")
-            .includes(query.toLowerCase().replace(/\s+/g, ""))
-        );
+  const { filteredManufactures, handleChange, query, setQuery } =
+    useSearchManufacturer(manufacturer);
 
   return (
     <div className="search-manufacturer">
