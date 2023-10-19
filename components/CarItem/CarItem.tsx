@@ -4,9 +4,13 @@ import React, { useState } from "react";
 import Image from "next/image";
 
 import { CarProps } from "@/types/index";
+import { calculateCarRent } from "@/utils";
+import PricePerDay from "../PricePerDay/PricePerDay";
 
 export default function CarItem({ car }: { car: CarProps }) {
   const { city_mpg, make, model, year, transmission, drive } = car;
+
+  const carRent = calculateCarRent({ city_mpg, year });
 
   return (
     <div className="car-card group">
@@ -15,9 +19,7 @@ export default function CarItem({ car }: { car: CarProps }) {
           {make} {model}
         </h2>
       </div>
-      <p>
-        <span>Car rent...</span>
-      </p>
+      <PricePerDay carRent={carRent} />
     </div>
   );
 }

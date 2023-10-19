@@ -25,7 +25,13 @@ export async function fetchCars() {
   return data;
 }
 
-export const calculateCarRent = (city_mpg: number, year: number) => {
+export const calculateCarRent = ({
+  city_mpg,
+  year,
+}: {
+  city_mpg: number;
+  year: number;
+}): string => {
   const basePricePerDay = 50;
   const mileageFactor = 0.1;
   const ageFactor = 0.05;
