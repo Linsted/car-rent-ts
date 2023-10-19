@@ -3,6 +3,7 @@ import { API_KEY_ERROR } from "./constants";
 
 export async function fetchCars() {
   const { API_KEY } = process.env;
+  let data;
 
   if (API_KEY === undefined) {
     throw new Error(API_KEY_ERROR);
@@ -13,9 +14,13 @@ export async function fetchCars() {
     "X-RapidAPI-Host": "cars-by-api-ninjas.p.rapidapi.com",
   };
 
-  const response = await fetch(URL, { headers });
+  try {
+    const response = await fetch(`${URL}?model=corolla`, { headers });
 
-  const data = await response.json();
+    data = await response.json();
+  } catch (error) {
+    console.error(error);
+  }
 
   return data;
 }
