@@ -52,3 +52,9 @@ export interface CarProps {
   transmission: string;
   year: number;
 }
+
+export interface CarItemIconsProps {
+  transmission: string;
+  drive: string;
+  city_mpg: number;
+}
