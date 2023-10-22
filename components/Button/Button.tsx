@@ -25,7 +25,7 @@ export default function Button({
       className={`custom-btn ${containerStyles}`}
       onClick={handleClick}
     >
-      <span className={`${textStyles} flex-1`}>{title}</span>
+      {title && <span className={`${textStyles} flex-1`}>{title}</span>}
       {buttonIcon && (
         <Image
           className="object-contain"
