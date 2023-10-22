@@ -4,15 +4,30 @@ import React, { useState } from "react";
 import Image from "next/image";
 
 import { CarProps } from "@/types/index";
-import { calculateCarRent } from "@/utils";
-import PricePerDay from "../PricePerDay/PricePerDay";
-import { LOGO_ALT, PATHS } from "@/helpers/global/constants/constants";
+import {
+  ICONS_DIMENSIONS,
+  LOGO_ALT,
+  PATHS,
+} from "@/helpers/global/constants/constants";
+
 import { CarItemIcons } from "../CarItemIcons/CarItemIcons";
+import { BUTTON_TITLE, IMAGE_ALT_TEXT } from "./constants";
+import PricePerDay from "../PricePerDay/PricePerDay";
+import { useCarItem } from "./useCarItem";
+
+import Button from "../Button/Button";
 
 export default function CarItem({ car }: { car: CarProps }) {
-  const { city_mpg, make, model, year, transmission, drive } = car;
-
-  const carRent = calculateCarRent({ city_mpg, year });
+  const {
+    handleClick,
+    carRent,
+    isOpen,
+    city_mpg,
+    make,
+    model,
+    transmission,
+    drive,
+  } = useCarItem(car);
 
   return (
     <div className="car-card group">
@@ -37,6 +52,18 @@ export default function CarItem({ car }: { car: CarProps }) {
           drive={drive}
           city_mpg={city_mpg}
         />
+        <div className="car-card__btn-container">
+          <Button
+            title={BUTTON_TITLE}
+            containerStyles="w-full py-[16px] rounded-full bg-primary-blue"
+            textStyles="text-white text-[14px] leading-[17px] font-bold"
+            buttonIcon={PATHS.ARROW}
+            iconWidth={ICONS_DIMENSIONS.WIDTH}
+            iconHeight={ICONS_DIMENSIONS.HEIGHT}
+            iconAlt={IMAGE_ALT_TEXT}
+            handleClick={handleClick}
+          />
+        </div>
       </div>
     </div>
   );

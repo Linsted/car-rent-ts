@@ -2,9 +2,15 @@ import { MouseEventHandler } from "react";
 
 export interface ButtonProps {
   title: string;
+  iconWidth: number;
+  iconHeight: number;
   containerStyles?: string;
   handleClick?: MouseEventHandler<HTMLButtonElement>;
   type?: "button" | "submit" | "reset";
+  textStyles?: string;
+  buttonIcon?: string;
+  isDisabled?: boolean;
+  iconAlt?: string;
 }
 
 export interface LogoImageProps {

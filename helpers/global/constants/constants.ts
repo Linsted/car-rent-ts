@@ -6,6 +6,7 @@ export const PATHS = Object.freeze({
   WHEEL: "/steering-wheel.svg",
   TIRE: "/tire.svg",
   GAS: "/gas.svg",
+  ARROW: "/right-arrow.svg",
 });
 
 export const LOGO_ALT = "Car Hub Logo";
@@ -19,3 +20,14 @@ export const LOGO_DIMENSIONS = Object.freeze({
 });
 
 export const URL = "https://cars-by-api-ninjas.p.rapidapi.com/v1/cars";
+
+export const BUTTONS_TYPES = Object.freeze({
+  BUTTON: "button",
+  SUBMIT: "submit",
+  RESET: "reset",
+});
+
+export const ICONS_DIMENSIONS = Object.freeze({
+  WIDTH: 20,
+  HEIGHT: 20,
+});

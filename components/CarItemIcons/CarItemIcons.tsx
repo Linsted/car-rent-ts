@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-import { PATHS } from "@/helpers/global/constants/constants";
+import { ICONS_DIMENSIONS, PATHS } from "@/helpers/global/constants/constants";
 import { CarItemIconsProps } from "@/types";
-import { IMAGE_ALTS, TRANSMISSION_TYPE, IMAGE_DIMENSIONS } from "./constants";
+import { IMAGE_ALTS, TRANSMISSION_TYPE } from "./constants";
 
 export function CarItemIcons({
   transmission,
@@ -22,8 +22,8 @@ export function CarItemIcons({
         <Image
           src={PATHS.WHEEL}
           alt={IMAGE_ALTS.WHEEL}
-          width={IMAGE_DIMENSIONS.WIDTH}
-          height={IMAGE_DIMENSIONS.HEIGHT}
+          width={ICONS_DIMENSIONS.WIDTH}
+          height={ICONS_DIMENSIONS.HEIGHT}
         />
         <p className="text-[14px]">{transmissionType}</p>
       </div>
@@ -31,8 +31,8 @@ export function CarItemIcons({
         <Image
           src={PATHS.TIRE}
           alt={IMAGE_ALTS.TIRE}
-          width={IMAGE_DIMENSIONS.WIDTH}
-          height={IMAGE_DIMENSIONS.HEIGHT}
+          width={ICONS_DIMENSIONS.WIDTH}
+          height={ICONS_DIMENSIONS.HEIGHT}
         />
         <p className="text-[14px]">{driveType}</p>
       </div>
@@ -40,8 +40,8 @@ export function CarItemIcons({
         <Image
           src={PATHS.GAS}
           alt={IMAGE_ALTS.GAS}
-          width={IMAGE_DIMENSIONS.WIDTH}
-          height={IMAGE_DIMENSIONS.HEIGHT}
+          width={ICONS_DIMENSIONS.WIDTH}
+          height={ICONS_DIMENSIONS.HEIGHT}
         />
         <p className="text-[14px]">{city_mpg} MPG</p>
       </div>

@@ -8,8 +8,3 @@ export const IMAGE_ALTS = Object.freeze({
   TIRE: "tire",
   GAS: "gas",
 });
-
-export const IMAGE_DIMENSIONS = Object.freeze({
-  WIDTH: 20,
-  HEIGHT: 20,
-});
