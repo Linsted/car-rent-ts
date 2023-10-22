@@ -1,9 +1,8 @@
 import { MouseEventHandler } from "react";
 
 export interface ButtonProps {
-  title: string;
-  iconWidth: number;
-  iconHeight: number;
+  iconWidth?: number;
+  iconHeight?: number;
   containerStyles?: string;
   handleClick?: MouseEventHandler<HTMLButtonElement>;
   type?: "button" | "submit" | "reset";
@@ -11,6 +10,7 @@ export interface ButtonProps {
   buttonIcon?: string;
   isDisabled?: boolean;
   iconAlt?: string;
+  title?: string;
 }
 
 export interface LogoImageProps {
@@ -63,4 +63,10 @@ export interface CarItemIconsProps {
   transmission: string;
   drive: string;
   city_mpg: number;
+}
+
+export interface CarDetailsProps {
+  isOpen: boolean;
+  closeModal: () => void;
+  car: CarProps;
 }

@@ -7,6 +7,7 @@ export const PATHS = Object.freeze({
   TIRE: "/tire.svg",
   GAS: "/gas.svg",
   ARROW: "/right-arrow.svg",
+  CLOSE: "/close.svg",
 });
 
 export const LOGO_ALT = "Car Hub Logo";
