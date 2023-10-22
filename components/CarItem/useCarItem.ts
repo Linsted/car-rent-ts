@@ -12,6 +12,8 @@ export function useCarItem(car: CarProps) {
 
   const handleClick = () => setIsOpen(true);
 
+  const closeModal = () => setIsOpen(false);
+
   return {
     handleClick,
     carRent,
@@ -22,5 +24,6 @@ export function useCarItem(car: CarProps) {
     year,
     transmission,
     drive,
+    closeModal,
   };
 }

@@ -16,6 +16,7 @@ import PricePerDay from "../PricePerDay/PricePerDay";
 import { useCarItem } from "./useCarItem";
 
 import Button from "../Button/Button";
+import CarDetails from "../CarDetails/CarDetails";
 
 export default function CarItem({ car }: { car: CarProps }) {
   const {
@@ -27,6 +28,7 @@ export default function CarItem({ car }: { car: CarProps }) {
     model,
     transmission,
     drive,
+    closeModal,
   } = useCarItem(car);
 
   return (
@@ -65,6 +67,7 @@ export default function CarItem({ car }: { car: CarProps }) {
           />
         </div>
       </div>
+      <CarDetails isOpen={isOpen} closeModal={closeModal} car={car} />
     </div>
   );
 }
