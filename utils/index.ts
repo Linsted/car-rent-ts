@@ -1,5 +1,10 @@
-import { URL } from "@/helpers/global/constants/constants";
+import { URL_CARS, URL_IMAGES } from "@/helpers/global/constants/constants";
 import { API_KEY_ERROR } from "./constants";
+import {
+  calculateCarRentArgs,
+  generateCarImageUrlArgs,
+  URLSearchParameters,
+} from "@/types";
 
 export async function fetchCars() {
   const { API_KEY } = process.env;
@@ -15,7 +20,7 @@ export async function fetchCars() {
   };
 
   try {
-    const response = await fetch(`${URL}?model=corolla`, { headers });
+    const response = await fetch(`${URL_CARS}?model=golf`, { headers });
 
     data = await response.json();
   } catch (error) {
@@ -28,10 +33,7 @@ export async function fetchCars() {
 export const calculateCarRent = ({
   city_mpg,
   year,
-}: {
-  city_mpg: number;
-  year: number;
-}): string => {
+}: calculateCarRentArgs): string => {
   const basePricePerDay = 50;
   const mileageFactor = 0.1;
   const ageFactor = 0.05;
@@ -43,3 +45,28 @@ export const calculateCarRent = ({
 
   return rentalRatePerDay.toFixed(0);
 };
+
+function appendSearchParamsToURL({
+  url,
+  make,
+  model,
+  year,
+  angle,
+}: URLSearchParameters) {
+  url.searchParams.append("customer", "hrjavascript-mastery");
+  url.searchParams.append("make", make);
+  url.searchParams.append("modelFamily", model.split(" ")[0]);
+  url.searchParams.append("zoomType", "fullscreen");
+  url.searchParams.append("modelYear", `${year}`);
+  url.searchParams.append("angle", `${angle}`);
+}
+
+export function generateCarImageUrl({ car, angle }: generateCarImageUrlArgs) {
+  const url = new URL(URL_IMAGES);
+
+  const { make, year, model } = car;
+
+  appendSearchParamsToURL({ url, make, model, year, angle });
+
+  return String(url);
+}
