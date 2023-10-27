@@ -6,9 +6,10 @@ import Image from "next/image";
 import { CarProps } from "@/types/index";
 import {
   ICONS_DIMENSIONS,
-  LOGO_ALT,
+  IMAGE_CARD_ALT,
   PATHS,
 } from "@/helpers/global/constants/constants";
+import { generateCarImageUrl } from "@/utils";
 
 import { CarItemIcons } from "../CarItemIcons/CarItemIcons";
 import { BUTTON_TITLE, IMAGE_ALT_TEXT } from "./constants";
@@ -42,8 +43,8 @@ export default function CarItem({ car }: { car: CarProps }) {
       <div className="relative w-full h-40 my-3 object-contain">
         <Image
           className="object-contain"
-          src={PATHS.HERO_IMAGE}
-          alt={LOGO_ALT}
+          src={generateCarImageUrl({ car })}
+          alt={IMAGE_CARD_ALT}
           fill
           priority
         />

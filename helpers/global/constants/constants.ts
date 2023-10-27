@@ -20,7 +20,9 @@ export const LOGO_DIMENSIONS = Object.freeze({
   HEIGHT: 18,
 });
 
-export const URL = "https://cars-by-api-ninjas.p.rapidapi.com/v1/cars";
+export const URL_CARS = "https://cars-by-api-ninjas.p.rapidapi.com/v1/cars";
+
+export const URL_IMAGES = "https://cdn.imagin.studio/getImage";
 
 export const BUTTONS_TYPES = Object.freeze({
   BUTTON: "button",
@@ -32,3 +34,6 @@ export const ICONS_DIMENSIONS = Object.freeze({
   WIDTH: 20,
   HEIGHT: 20,
 });
+
+export const IMAGE_CARD_ALT =
+  "Sorry, looks like the API with the images no longer works :(((";

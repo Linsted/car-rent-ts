@@ -1,9 +1,8 @@
 import React from "react";
 
-import { CarProps } from "@/types/index";
+import { CarProps } from "@/types";
 
 import CarItem from "../CarItem/CarItem";
-
 export default function CarsList({ allCars }: { allCars: CarProps[] }) {
   return (
     <section>
