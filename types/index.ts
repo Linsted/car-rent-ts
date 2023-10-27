@@ -59,6 +59,19 @@ export interface CarProps {
   year: number;
 }
 
+export interface generateCarImageUrlArgs {
+  car: CarProps;
+  angle?: string;
+}
+
+export interface URLSearchParameters {
+  url: URL;
+  make: string;
+  model: string;
+  year: number;
+  angle?: string;
+}
+
 export interface CarItemIconsProps {
   transmission: string;
   drive: string;
@@ -69,4 +82,9 @@ export interface CarDetailsProps {
   isOpen: boolean;
   closeModal: () => void;
   car: CarProps;
+}
+
+export interface calculateCarRentArgs {
+  city_mpg: number;
+  year: number;
 }
