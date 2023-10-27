@@ -49,7 +49,7 @@ export default function CarDetails({
                     iconWidth={ICONS_DIMENSIONS.WIDTH}
                     iconHeight={ICONS_DIMENSIONS.HEIGHT}
                   />
-                  <ModalContentPhoto />
+                  <ModalContentPhoto car={car} />
                   <ModalContentInformation car={car} />
                 </Dialog.Panel>
               </Transition.Child>
