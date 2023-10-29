@@ -1,3 +1,5 @@
+import { Toaster } from "sonner";
+
 import Header from "@/components/Header/Header";
 import "./globals.css";
 import type { Metadata } from "next";
@@ -19,6 +21,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <Toaster />
       </body>
     </html>
   );
