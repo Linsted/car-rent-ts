@@ -8,6 +8,8 @@ export const PATHS = Object.freeze({
   GAS: "/gas.svg",
   ARROW: "/right-arrow.svg",
   CLOSE: "/close.svg",
+  GLASS: "/magnifying-glass.svg",
+  MODEL_ICON: "/model-icon.png",
 });
 
 export const LOGO_ALT = "Car Hub Logo";

@@ -88,3 +88,13 @@ export interface calculateCarRentArgs {
   city_mpg: number;
   year: number;
 }
+
+export interface SearchParams {
+  model: string;
+  manufacturer: string;
+}
+
+export interface SearchModelProps {
+  model: string;
+  handleInput: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
