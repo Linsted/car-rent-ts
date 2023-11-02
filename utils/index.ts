@@ -4,11 +4,13 @@ import {
   calculateCarRentArgs,
   generateCarImageUrlArgs,
   URLSearchParameters,
+  FilterParams,
 } from "@/types";
 
-export async function fetchCars() {
+export async function fetchCars(filter: FilterParams) {
   const { API_KEY } = process.env;
   let data;
+  const { manufacturer, year, fuel, limit, model } = filter;
 
   if (API_KEY === undefined) {
     throw new Error(API_KEY_ERROR);
@@ -19,8 +21,10 @@ export async function fetchCars() {
     "X-RapidAPI-Host": "cars-by-api-ninjas.p.rapidapi.com",
   };
 
+  const fullURL = `${URL_CARS}?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}&`;
+
   try {
-    const response = await fetch(`${URL_CARS}?model=golf`, { headers });
+    const response = await fetch(fullURL, { headers });
 
     data = await response.json();
   } catch (error) {

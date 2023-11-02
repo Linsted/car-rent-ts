@@ -1,5 +1,3 @@
-import React from "react";
-
 import { CarProps } from "@/types";
 
 import CarItem from "../CarItem/CarItem";

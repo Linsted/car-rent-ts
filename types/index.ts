@@ -98,3 +98,11 @@ export interface SearchModelProps {
   model: string;
   handleInput: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
+
+export interface FilterParams {
+  manufacturer?: string;
+  year?: number;
+  fuel?: string;
+  limit?: number;
+  model?: string;
+}
