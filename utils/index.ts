@@ -5,6 +5,7 @@ import {
   generateCarImageUrlArgs,
   URLSearchParameters,
   FilterParams,
+  HandleUpdateParams,
 } from "@/types";
 
 export async function fetchCars(filter: FilterParams) {
@@ -73,4 +74,14 @@ export function generateCarImageUrl({ car, angle }: generateCarImageUrlArgs) {
   appendSearchParamsToURL({ url, make, model, year, angle });
 
   return String(url);
+}
+
+export function updateSearchParams({ title, value }: HandleUpdateParams) {
+  const searchParams = new URLSearchParams(window.location.search);
+
+  searchParams.set(title, value);
+
+  const newPathName = `${window.location.pathname}?${searchParams.toString()}`;
+
+  return newPathName;
 }

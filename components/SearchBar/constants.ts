@@ -5,4 +5,4 @@ export const BUTTON_ICONS_DIMENSIONS = Object.freeze({
   HEIGHT: 40,
 });
 
-export const TOAST_NOTIFICATION = "Please pick something ...";
+export const TOAST_ERROR_NOTIFICATION = "Please pick something ...";

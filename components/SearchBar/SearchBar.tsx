@@ -13,7 +13,7 @@ import Button from "../Button/Button";
 import {
   BUTTON_ICONS_DIMENSIONS,
   BUTTON_IMAGE_ALT,
-  TOAST_NOTIFICATION,
+  TOAST_ERROR_NOTIFICATION,
 } from "./constants";
 import SearchModel from "../SearchModel/SearchModel";
 
@@ -50,7 +50,7 @@ export default function SearchBar() {
     event.preventDefault();
 
     if (manufacturer === "" && model === "") {
-      return toast.error(TOAST_NOTIFICATION);
+      return toast.error(TOAST_ERROR_NOTIFICATION);
     }
 
     updateSearchParams({

@@ -1,8 +1,9 @@
-import React from "react";
+import { fuels, yearsOfProduction } from "@/helpers/global/data/data";
 
 import SearchBar from "../SearchBar/SearchBar";
 import CustomFilter from "../CustomFilter/CustomFilter";
-import { HINT, MAIN_TITLE } from "./constants";
+
+import { FILTER_TITLES, HINT, MAIN_TITLE } from "./constants";
 
 export default function Catalogue() {
   return (
@@ -14,8 +15,11 @@ export default function Catalogue() {
       <div className="home_filters">
         <SearchBar />
         <div className="home__filter-container">
-          <CustomFilter title="fuel" />
-          <CustomFilter title="fuel" />
+          <CustomFilter title={FILTER_TITLES.FUEL} options={fuels} />
+          <CustomFilter
+            title={FILTER_TITLES.YEAR}
+            options={yearsOfProduction}
+          />
         </div>
       </div>
     </div>
