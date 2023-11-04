@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useState, Fragment } from "react";
 
 import { CustomFilterProps, HandleUpdateParams } from "@/types";
@@ -12,8 +12,19 @@ import { updateSearchParams } from "@/utils";
 import { ICON_ALT } from "./constants";
 
 export default function CustomFilter({ title, options }: CustomFilterProps) {
-  const [selected, setSelected] = useState(options[0]);
+  const searchParams = useSearchParams();
   const router = useRouter();
+
+  const initialParam = searchParams.get(title);
+  let initialOptions;
+
+  if (initialParam) {
+    initialOptions = { title: initialParam, value: initialParam };
+  } else {
+    initialOptions = options[0];
+  }
+
+  const [selected, setSelected] = useState(initialOptions);
 
   const handleUpdateParams = (event: HandleUpdateParams) => {
     const { value } = event;
