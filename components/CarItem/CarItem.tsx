@@ -47,6 +47,7 @@ export default function CarItem({ car }: { car: CarProps }) {
           alt={IMAGE_CARD_ALT}
           fill
           priority
+          sizes="25vw"
         />
       </div>
       <div className="relative flex w-full mt-2">

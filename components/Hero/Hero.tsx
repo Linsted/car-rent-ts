@@ -27,6 +27,8 @@ export default function Hero() {
             src={PATHS.HERO_IMAGE}
             alt={HERO_IMAGE_ALT}
             fill
+            sizes="80vw"
+            priority
             className="object-contain"
           />
         </div>

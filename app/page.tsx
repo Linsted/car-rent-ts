@@ -24,7 +24,7 @@ export default async function Home({
       <Hero />
       <Catalogue />
       {!isDataEmpty ? (
-        <CarsList allCars={allCars} />
+        <CarsList allCars={allCars} searchParams={searchParams} />
       ) : (
         <div className="home__error-container">
           <h2 className="text-black text-xl font-bold">Ooops, no results</h2>

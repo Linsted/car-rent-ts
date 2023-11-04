@@ -121,3 +121,13 @@ export interface HandleUpdateParams {
   title: string;
   value: string;
 }
+
+export interface CarsListProps {
+  allCars: CarProps[];
+  searchParams: FilterParams;
+}
+
+export interface ShowMoreProps {
+  pageNumber: number;
+  isNext: boolean;
+}

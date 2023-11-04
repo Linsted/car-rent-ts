@@ -40,3 +40,5 @@ export const ICONS_DIMENSIONS = Object.freeze({
 
 export const IMAGE_CARD_ALT =
   "Sorry, looks like the API with the images no longer works :(((";
+
+export const ITEMS_PER_PAGE = 10;
