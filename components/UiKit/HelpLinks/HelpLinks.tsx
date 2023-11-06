@@ -1,5 +1,4 @@
 import Link from "next/link";
-import React from "react";
 
 import { PATHS } from "@/helpers/global/constants/constants";
 import { HelpLinksProps } from "@/types";

@@ -1,13 +1,16 @@
 import { fuels, yearsOfProduction } from "@/helpers/global/data/data";
+import { CATALOGUE_WRAPPER_ID } from "@/helpers/global/constants/constants";
 
 import SearchBar from "../SearchBar/SearchBar";
 import CustomFilter from "../CustomFilter/CustomFilter";
-
 import { FILTER_TITLES, HINT, MAIN_TITLE } from "./constants";
 
 export default function Catalogue() {
   return (
-    <div className="mt-12 padding-x padding-y max-width  " id="discover">
+    <div
+      className="mt-12 padding-x padding-y max-width  "
+      id={CATALOGUE_WRAPPER_ID}
+    >
       <div className="home__text-container">
         <h1 className="text-4xl font-extrabold">{MAIN_TITLE}</h1>
         <p>{HINT}</p>

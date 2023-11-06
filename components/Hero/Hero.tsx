@@ -1,15 +1,24 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
 
-import { PATHS } from "@/helpers/global/constants/constants";
-import Button from "../Button/Button";
+import {
+  CATALOGUE_WRAPPER_ID,
+  PATHS,
+} from "@/helpers/global/constants/constants";
 
-import { HERO_IMAGE_ALT, HERO_TITLES } from "./constants";
+import Button from "../Button/Button";
+import { HERO_IMAGE_ALT, HERO_TITLES, BEHAVIOR_TYPE } from "./constants";
 
 export default function Hero() {
-  const handleScroll = () => {};
+  function handleScroll() {
+    const nextSection = document.getElementById(CATALOGUE_WRAPPER_ID);
+
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: BEHAVIOR_TYPE });
+    }
+  }
+
   return (
     <div className="hero">
       <div className="flex-1 pt-36 padding-x">

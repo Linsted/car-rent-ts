@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import { ICONS_DIMENSIONS, PATHS } from "@/helpers/global/constants/constants";
 import { CarItemIconsProps } from "@/types";
+
 import { IMAGE_ALTS, TRANSMISSION_TYPE } from "./constants";
 
 export function CarItemIcons({

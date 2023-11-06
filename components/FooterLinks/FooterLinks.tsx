@@ -1,5 +1,3 @@
-import React from "react";
-
 import { FooterSection } from "@/types";
 
 import FooterLink from "../FooterLink/FooterLink";

@@ -1,5 +1,3 @@
-import React from "react";
-
 import { currentYear } from "@/helpers/global/constants/constants";
 import { footerLinksData } from "@/helpers/global/data/data";
 

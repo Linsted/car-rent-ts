@@ -1,41 +1,20 @@
 "use client";
 
 import Image from "next/image";
-import { useRouter, useSearchParams } from "next/navigation";
-import { useState, Fragment } from "react";
+import { Fragment } from "react";
 
-import { CustomFilterProps, HandleUpdateParams } from "@/types";
+import { CustomFilterProps } from "@/types";
 import { Listbox, Transition } from "@headlessui/react";
 import { ICONS_DIMENSIONS, PATHS } from "@/helpers/global/constants/constants";
-import { updateSearchParams } from "@/utils";
 
 import { ICON_ALT } from "./constants";
+import { useCustomFilter } from "./useCustomFilter";
 
 export default function CustomFilter({ title, options }: CustomFilterProps) {
-  const searchParams = useSearchParams();
-  const router = useRouter();
-
-  const initialParam = searchParams.get(title);
-  let initialOptions;
-
-  if (initialParam) {
-    initialOptions = { title: initialParam, value: initialParam };
-  } else {
-    initialOptions = options[0];
-  }
-
-  const [selected, setSelected] = useState(initialOptions);
-
-  const handleUpdateParams = (event: HandleUpdateParams) => {
-    const { value } = event;
-
-    const newPathName = updateSearchParams({
-      title,
-      value: value.toLowerCase(),
-    });
-
-    router.push(newPathName, { scroll: false });
-  };
+  const { selected, setSelected, handleUpdateParams } = useCustomFilter({
+    title,
+    options,
+  });
 
   return (
     <div className="w-fit mt-4">

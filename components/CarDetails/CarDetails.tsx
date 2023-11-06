@@ -1,10 +1,10 @@
-import React, { Fragment } from "react";
-import { Dialog, Transition } from "@headlessui/react";
+import { Fragment } from "react";
 
+import { Dialog, Transition } from "@headlessui/react";
 import { CarDetailsProps } from "@/types";
 import { ICONS_DIMENSIONS, PATHS } from "@/helpers/global/constants/constants";
-import { ICON_ALT } from "./constants";
 
+import { ICON_ALT } from "./constants";
 import Button from "../Button/Button";
 import ModalContentPhoto from "../ModalContentPhoto/ModalContentPhoto";
 import ModalContentInformation from "../ModalContentInformation/ModalContentInformation";

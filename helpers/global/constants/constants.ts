@@ -42,3 +42,10 @@ export const IMAGE_CARD_ALT =
   "Sorry, looks like the API with the images no longer works :(((";
 
 export const ITEMS_PER_PAGE = 10;
+
+export const CATALOGUE_WRAPPER_ID = "discover";
+
+export const SEARCH_PARAMS = Object.freeze({
+  MANUFACTURER: "manufacturer",
+  MODEL: "model",
+});

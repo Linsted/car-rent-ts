@@ -1,6 +1,5 @@
 "use client";
 
-import React, { useState } from "react";
 import Image from "next/image";
 
 import { CarProps } from "@/types/index";
@@ -15,7 +14,6 @@ import { CarItemIcons } from "../CarItemIcons/CarItemIcons";
 import { BUTTON_TITLE, IMAGE_ALT_TEXT } from "./constants";
 import PricePerDay from "../PricePerDay/PricePerDay";
 import { useCarItem } from "./useCarItem";
-
 import Button from "../Button/Button";
 import CarDetails from "../CarDetails/CarDetails";
 

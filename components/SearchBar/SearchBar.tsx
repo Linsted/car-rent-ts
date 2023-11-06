@@ -1,66 +1,17 @@
 "use client";
 
-import React, { useState } from "react";
-import { toast } from "sonner";
-import { useRouter } from "next/navigation";
-
 import { BUTTONS_TYPES, PATHS } from "@/helpers/global/constants/constants";
-import { SearchParams } from "@/types";
 
 import SearchManufacturer from "../SearchManufacturer/SearchManufacturer";
 import Button from "../Button/Button";
 
-import {
-  BUTTON_ICONS_DIMENSIONS,
-  BUTTON_IMAGE_ALT,
-  TOAST_ERROR_NOTIFICATION,
-} from "./constants";
+import { BUTTON_ICONS_DIMENSIONS, BUTTON_IMAGE_ALT } from "./constants";
 import SearchModel from "../SearchModel/SearchModel";
+import useSearchBar from "./useSearchBar";
 
 export default function SearchBar() {
-  // Logic can`t be moved to the custom hook because of NextRouter utilizing.
-  const [manufacturer, setManufacturer] = useState("");
-  const [model, setModel] = useState("");
-
-  const router = useRouter();
-
-  const updateSearchParams = ({ model, manufacturer }: SearchParams) => {
-    const searchParams = new URLSearchParams(window.location.search);
-
-    if (model) {
-      searchParams.set("model", model);
-    } else {
-      searchParams.delete("model");
-    }
-
-    if (manufacturer) {
-      searchParams.set("manufacturer", manufacturer);
-    } else {
-      searchParams.delete("manufacturer");
-    }
-
-    const newPathName = `${
-      window.location.pathname
-    }?${searchParams.toString()}`;
-
-    router.push(newPathName, { scroll: false });
-  };
-
-  const handleSearch = (event: React.ChangeEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
-    if (manufacturer === "" && model === "") {
-      return toast.error(TOAST_ERROR_NOTIFICATION);
-    }
-
-    updateSearchParams({
-      model: model.toLowerCase(),
-      manufacturer: manufacturer.toLowerCase(),
-    });
-  };
-
-  const handleInput = (event: React.ChangeEvent<HTMLInputElement>) =>
-    setModel(event.target.value);
+  const { manufacturer, model, handleInput, handleSearch, setManufacturer } =
+    useSearchBar();
 
   return (
     <form className="searchbar" onSubmit={handleSearch}>

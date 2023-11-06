@@ -1,5 +1,5 @@
 import { manufacturers } from "@/helpers/global/data/data";
-import React, { useState } from "react";
+import { useState } from "react";
 import { REGEX_SPACE } from "./constants";
 
 export default function useSearchManufacturer() {
@@ -18,5 +18,10 @@ export default function useSearchManufacturer() {
             .includes(query.toLowerCase().replace(REGEX_SPACE, ""))
         );
 
-  return { filteredManufactures, handleChange, query, setQuery };
+  return {
+    filteredManufactures,
+    handleChange,
+    query,
+    setQuery,
+  };
 }

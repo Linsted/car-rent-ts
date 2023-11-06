@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { Combobox } from "@headlessui/react";
 import Image from "next/image";
 
@@ -10,6 +9,7 @@ import useSearchManufacturer from "./useSearchManufacturer";
 
 export default function SearchManufacturer({
   manufacturer,
+
   setManufacturer,
 }: SearchManufacturerProps) {
   const { filteredManufactures, handleChange, query, setQuery } =

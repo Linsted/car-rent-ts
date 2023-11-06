@@ -1,9 +1,9 @@
-import React from "react";
 import Image from "next/image";
 
-import { IMAGE_CARD_ALT, PATHS } from "@/helpers/global/constants/constants";
+import { IMAGE_CARD_ALT } from "@/helpers/global/constants/constants";
 import { CarProps } from "@/types";
 import { generateCarImageUrl } from "@/utils";
+
 import { IMAGE_ANGLES } from "./constants";
 
 export default function ModalContentPhoto({ car }: { car: CarProps }) {
@@ -14,6 +14,7 @@ export default function ModalContentPhoto({ car }: { car: CarProps }) {
           src={generateCarImageUrl({ car })}
           alt={IMAGE_CARD_ALT}
           fill
+          sizes="80"
           className="object-contain"
         />
       </div>
@@ -27,6 +28,7 @@ export default function ModalContentPhoto({ car }: { car: CarProps }) {
               src={generateCarImageUrl({ car, angle })}
               alt={IMAGE_CARD_ALT}
               fill
+              sizes="80"
               className="object-contain"
             />
           </div>

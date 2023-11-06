@@ -1,5 +1,3 @@
-import React from "react";
-
 import { CarProps } from "@/types";
 
 export default function ModalContentInformation({ car }: { car: CarProps }) {

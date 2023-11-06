@@ -5,3 +5,5 @@ export const HERO_TITLES = Object.freeze({
 });
 
 export const HERO_IMAGE_ALT = "hero";
+
+export const BEHAVIOR_TYPE = "smooth";
