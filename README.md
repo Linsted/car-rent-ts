@@ -7,4 +7,4 @@ Link to the deployed version - https://car-rent-ts-iota.vercel.app/
 - Next.js
 - TypeScript
 - Tailwind CSS
-- React Hook Form
+
